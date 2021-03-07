@@ -11,3 +11,6 @@ Activate the virtual environment:
 cd covidproj
 Run the server:
   python manage.py runserver
+
+
+![covid1](https://user-images.githubusercontent.com/47332035/110235302-5500de00-7f55-11eb-9c51-273e8fdda598.png)
