@@ -1,0 +1,110 @@
+{% extends "index.html" %}
+{% block content %}
+
+    <div class="container">
+      <canvas id="chartCnfCases" height="200" width="300"></canvas>
+      <canvas id="chartCdd"></canvas>
+    </div>
+    <script>
+      let myChartCnfCases = document.getElementById('chartCnfCases').getContext('2d');
+      let lineChartCnfCases = new Chart(myChartCnfCases, {
+        type: 'line',
+        data: {
+          labels: ['01/01/21', '11/01/21','21/01/21', '30/01/21'],
+          datasets: [{
+            label: 'Samples Tested',
+            data: [5000, 4700, 3600, 5200],
+            borderWidth:1,
+            borderColor: 'red',
+            hoverBorderWidth: 3,
+            hoverBorderColor: 'orange'
+           },
+           {
+            label: 'Confirmed cases',
+            data: [3000, 1500, 2300, 3500],
+            borderWidth:1,
+            borderColor: 'blue',
+            hoverBorderWidth: 3,
+            hoverBorderColor: 'orange'
+           },
+          ],
+         
+        },
+        options: {
+          title: {
+            display: true,
+            text: 'Daily Sample tests and confirmed cases',
+            fontSize: 20
+          },
+          legend: {
+            position: 'right',
+            display: true,
+            labels: {
+              fontColor: '#000'
+            }
+          },
+        scales: {
+        yAxes: [{id: 'y-axis-1', type: 'linear', position: 'left', ticks: {min:0, max:10000}}]
+      }
+        }
+      });
+
+
+
+let myChartCdd = document.getElementById('chartCdd').getContext('2d');
+
+let lineChartCdd = new Chart(myChartCdd, {
+  type: 'line',
+  data: {
+    labels: ['01/01/21', '11/01/21','21/01/21', '30/01/21'],
+    datasets: [{
+      label: 'Confirmed Cases',
+      data: [5000, 4700, 3600, 5200],
+      borderWidth:1,
+      borderColor: 'black',
+      hoverBorderWidth: 3,
+      hoverBorderColor: 'orange'
+     },
+     {
+      label: 'Deaths',
+      data: [3000, 1500, 2300, 3500],
+      borderWidth:1,
+      borderColor: 'red',
+      hoverBorderWidth: 3,
+      hoverBorderColor: 'orange'
+     },
+     {
+      label: 'Discharges',
+      data: [1200, 800, 1360, 500],
+      borderWidth:1,
+      borderColor: 'green',
+      hoverBorderWidth: 3,
+      hoverBorderColor: 'orange'
+     },
+    ],
+   
+  },
+  options: {
+    title: {
+      display: true,
+      text: 'Daily Cases, Deaths and Discharge',
+      fontSize: 20
+    },
+    legend: {
+      position: 'right',
+      display: true,
+      labels: {
+        fontColor: '#000'
+      }
+    },
+  scales: {
+  yAxes: [{id: 'y-axis-1', type: 'linear', position: 'left', ticks: {min:0, max:10000}}]
+}
+  }
+});
+
+</script>
+</body>
+</html>
+   
+{% endblock %}

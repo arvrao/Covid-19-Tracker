@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+{% block content %}
+<table class="table text-center">
+    <thead>
+      <tr>
+        <th>Date and Notification Title</th>
+        <th>Link</th>
+      </tr>
+    </thead>
+    <tbody>
+      <style>
+        th,td{
+        border-color: black !important;
+        border: 2px solid black;
+        tr {
+        border: 5px dotted #4c4c4c;
+        }
+      }
+        </style>
+      
+      {% for data_value in result.data.notifications%}
+      <tr> 
+        <td>{{data_value.title}}</td>
+        <td><a href="">{{data_value.link}}</a></td>
+      </tr>
+      {% endfor %}
+</body>
+</html>
+   
+
+{% endblock %}
